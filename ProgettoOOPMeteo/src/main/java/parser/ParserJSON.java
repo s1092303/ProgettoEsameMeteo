@@ -1,4 +1,4 @@
-package it.univpm.ProgettoOOPMeteo.Operazioni;
+package parser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

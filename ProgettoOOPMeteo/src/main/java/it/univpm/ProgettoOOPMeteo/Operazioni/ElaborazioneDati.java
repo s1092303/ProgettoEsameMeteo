@@ -2,6 +2,9 @@ package it.univpm.ProgettoOOPMeteo.Operazioni;
 
 import java.util.Vector;
 
+import citta.Citta;
+import parser.ParserJSON;
+
 /**
  * Classe necessaria per elaborare i dati di un file JSON preso in ingresso tramite delle API
  * 

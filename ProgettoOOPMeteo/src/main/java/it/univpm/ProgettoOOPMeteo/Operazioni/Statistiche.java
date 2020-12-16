@@ -1,5 +1,7 @@
 package it.univpm.ProgettoOOPMeteo.Operazioni;
 
+import citta.Citta;
+
 public class Statistiche {
 
 	 
