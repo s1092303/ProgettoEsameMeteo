@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Classe main del  progetto di OOP riguardante OpenWeather.
+ * Classe main del  progetto di OOP riguardante OpenWeather
  * 
  * @author Nicola Ronchini
  * @author Tommaso Omiccioli
