@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 
  * @author Nicola Ronchini
  * @author Tommaso Omiccioli
+ * 
  */
 
 @SpringBootApplication
