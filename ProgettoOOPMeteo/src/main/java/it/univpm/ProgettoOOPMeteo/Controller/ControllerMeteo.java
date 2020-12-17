@@ -1,8 +1,11 @@
 package it.univpm.ProgettoOOPMeteo.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import Filtri.FiltroPerNome;
+import citta.Citta;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
 
 /**
@@ -19,6 +22,12 @@ public class ControllerMeteo {
 	public ElaborazioneDati exampleMethod () {
 		ElaborazioneDati p = new ElaborazioneDati();
 		return p;
+	}
+	
+	@PostMapping("/nomeCitta")
+	public Citta method() {
+		FiltroPerNome f = new FiltroPerNome("Roma");
+		return f.getCitta();
 	}
 	
 }
