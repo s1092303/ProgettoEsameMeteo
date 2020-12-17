@@ -54,4 +54,5 @@ public class ElaborazioneDati {
 	public void setListacitta(Vector<Citta> listacitta) {
 		Listacitta = listacitta;
 	}
+
 }
