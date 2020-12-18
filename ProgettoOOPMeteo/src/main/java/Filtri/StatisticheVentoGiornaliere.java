@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class StatisticheVentoGiornaliere {
 
-	private Vector<Double> medie = new Vector<Double> ();
+	private Vector<Float> medie = new Vector<Float> ();
 	
 	
 	public StatisticheVentoGiornaliere() {
@@ -17,7 +17,7 @@ public class StatisticheVentoGiornaliere {
 		}
 	}
 	
-	public Vector<Double> GetMedie() {
+	public Vector<Float> GetMedie() {
 		return medie;
 	}
 	

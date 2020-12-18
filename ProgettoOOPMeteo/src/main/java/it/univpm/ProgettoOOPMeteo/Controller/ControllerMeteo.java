@@ -34,7 +34,7 @@ public class ControllerMeteo {
 	}
 	
 	@GetMapping("/statsVento")
-	public Vector<Double> method2() {
+	public Vector<Float> method2() {
 		StatisticheVentoGiornaliere p = new StatisticheVentoGiornaliere();
 		return p.GetMedie();
 	}
