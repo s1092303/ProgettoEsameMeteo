@@ -30,7 +30,7 @@ public class ControllerMeteo {
 	
 	@PostMapping("/nomeCitta")
 	public Citta method(@RequestParam(name = "param") String param) {
-		FiltroPerNome f = new FiltroPerNome("param");
+		FiltroPerNome f = new FiltroPerNome(param);
 		return f.getCitta();
 	}
 	
