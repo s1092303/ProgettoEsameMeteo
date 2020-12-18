@@ -31,8 +31,11 @@ public class ElaborazioneDati {
 					"&appid=bcf6ba556143b256c30423368e21ab52"; 
 			parser.chiamataAPI(url);
 			c.SetPosVel(parser.getSpeed());
+			c.SetPosVel(1.5);
 			c.SetPosAng(parser.getDeg());
+			c.SetPosVel(1.5);
 			c.SetPosVis(parser.getVis());
+			c.SetPosVel(1.5);
 			Listacitta.add(c);
 		}
 		

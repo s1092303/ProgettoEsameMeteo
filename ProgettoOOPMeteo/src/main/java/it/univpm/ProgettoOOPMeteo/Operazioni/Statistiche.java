@@ -25,14 +25,14 @@ public class Statistiche {
 	  * @param fine
 	  * @return mediaVento
 	  */
-	 public float mediaVento (Citta citta, int inizio, int fine){
+	 public Double mediaVento (Citta citta, int inizio, int fine){
 		
 			float somma=0;
 		    
-			for (int i=inizio; i<=fine ; i++) {
+			for (int i = inizio; i < fine ; i++) {
 		    	somma += citta.getPosVelocita(i);
 		    }
-			return somma/(fine - inizio);
+			return (double) (somma/(fine - inizio + 1));
 		}
 	
 	 /**
@@ -67,7 +67,7 @@ public class Statistiche {
 	
 	float somma=0; 
 	
-	float media = mediaVento(citta, inizio, fine);
+	Double media = mediaVento(citta, inizio, fine);
 	
 	for (int i=inizio; i<=fine; i++) {
 		somma += (citta.getPosVelocita(i) - media)*(citta.getPosVelocita(i) - media);
@@ -89,7 +89,7 @@ public class Statistiche {
 	
 	float somma=0; 
 	
-	float media = mediaVento(citta, inizio, fine);
+	float media = mediaVisibilita(citta, inizio, fine);
 	
 	for (int i=inizio; i<=fine; i++) {
 		somma += (citta.getPosVisibilita(i) - media)*(citta.getPosVisibilita(i) - media);

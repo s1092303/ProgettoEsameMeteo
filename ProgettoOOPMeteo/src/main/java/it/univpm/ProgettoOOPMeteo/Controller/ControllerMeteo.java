@@ -1,10 +1,13 @@
 package it.univpm.ProgettoOOPMeteo.Controller;
 
+import java.util.Vector;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Filtri.FiltroPerNome;
+import Filtri.StatisticheVentoGiornaliere;
 import citta.Citta;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
 
@@ -28,6 +31,12 @@ public class ControllerMeteo {
 	public Citta method() {
 		FiltroPerNome f = new FiltroPerNome("Roma");
 		return f.getCitta();
+	}
+	
+	@GetMapping("/statsVento")
+	public Vector<Double> method2() {
+		StatisticheVentoGiornaliere p = new StatisticheVentoGiornaliere();
+		return p.GetMedie();
 	}
 	
 }
