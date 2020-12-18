@@ -29,10 +29,10 @@ public class Statistiche {
 		
 			float somma=0;
 		    
-			for (int i = inizio; i < fine ; i++) {
+			for (int i = inizio; i <= fine ; i++) {
 		    	somma += citta.getPosVelocita(i);
 		    }
-			return (somma/(fine - inizio + 1));
+			return (somma/((fine + 1) - inizio));
 		}
 	
 	 /**
