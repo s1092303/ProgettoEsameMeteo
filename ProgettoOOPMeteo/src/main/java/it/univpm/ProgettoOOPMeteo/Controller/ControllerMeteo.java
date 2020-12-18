@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Filtri.FiltroPerNome;
@@ -28,7 +29,7 @@ public class ControllerMeteo {
 	}
 	
 	@PostMapping("/nomeCitta")
-	public Citta method() {
+	public Citta method(@RequestParam(name = "param") String param) {
 		FiltroPerNome f = new FiltroPerNome("Roma");
 		return f.getCitta();
 	}
