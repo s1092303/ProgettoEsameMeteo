@@ -32,10 +32,13 @@ public class ElaborazioneDati {
 			parser.chiamataAPI(url);
 			c.SetPosVel(parser.getSpeed());
 			c.SetPosVel(1.5);
+			c.SetPosVis((long) 9000);
 			c.SetPosAng(parser.getDeg());
 			c.SetPosVel(1.5);
+			c.SetPosVis((long) 9000);
 			c.SetPosVis(parser.getVis());
 			c.SetPosVel(1.5);
+			c.SetPosVis((long) 9000);
 			Listacitta.add(c);
 		}
 		

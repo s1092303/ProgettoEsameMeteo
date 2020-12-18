@@ -1,7 +1,5 @@
 package it.univpm.ProgettoOOPMeteo.Controller;
 
-import java.util.Vector;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,15 +27,19 @@ public class ControllerMeteo {
 	}
 	
 	@PostMapping("/nomeCitta")
-	public Citta method(@RequestParam(name = "param") String param) {
-		FiltroPerNome f = new FiltroPerNome(param);
-		return f.getCitta();
+	public Citta method(@RequestParam(name = "param", required = false) String param) {
+		try {
+			FiltroPerNome f = new FiltroPerNome(param);
+			return f.getCitta();
+		} catch (Exception e) {
+			return null;
+		}
 	}
 	
 	@GetMapping("/statsVento")
-	public Vector<Float> method2() {
+	public StatisticheVentoGiornaliere method2() {
 		StatisticheVentoGiornaliere p = new StatisticheVentoGiornaliere();
-		return p.GetMedie();
+		return p;
 	}
-	
+
 }

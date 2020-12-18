@@ -21,6 +21,7 @@ public class Citta {
 	 * Costruttore di Default senza parametri inclusi
 	 */
 	public Citta() {}
+	
 	/**
 	 * Costruttore con parametri da inserire
 	 * Ogni oggetto Citta è costituito dal nome della citta e
