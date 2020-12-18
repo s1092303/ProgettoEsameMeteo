@@ -22,7 +22,8 @@ public class ElaborazioneDati {
 		String url;
 		ParserJSON parser = new ParserJSON();
 		ID.add("london,uk");
-		ID.add("Roma");
+		ID.add("rome");
+		ID.add("amsterdam");
 		for (int i = 0; i < ID.size(); i++) {
 			Citta c = new Citta();
 			c.setNome(ID.get(i));
