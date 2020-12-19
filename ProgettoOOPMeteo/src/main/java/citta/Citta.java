@@ -16,7 +16,6 @@ public class Citta {
 	private Vector<Double> VelocitaVento = new Vector<Double> (); 
 	private Vector<Long> AngoloVento = new Vector<Long> ();
 	private Vector<Long> vis = new Vector<Long> ();
-	private Double MediaVento;
 	/**
 	 * Costruttore di Default senza parametri inclusi
 	 */
@@ -71,7 +70,7 @@ public class Citta {
 	 */
 
 	public void setVelocitaVento(Vector<Double> velocitaVento) {
-		VelocitaVento = velocitaVento;
+		this.VelocitaVento = velocitaVento;
 	}
 	
 	/**
@@ -89,7 +88,7 @@ public class Citta {
 	 */
 
 	public void setAngoloVento(Vector<Long> angoloVento) {
-		AngoloVento = angoloVento;
+		this.AngoloVento = angoloVento;
 	}
 	
 	/**
@@ -183,14 +182,6 @@ public class Citta {
 	
 	public int GetSizeVis() {
 		return vis.size();
-	}
-	
-	public void setMediaVento(Double med) {
-		MediaVento = med;
-	}
-	
-	public Double GetMediaVento() {
-		return MediaVento;
 	}
 
 }

@@ -1,19 +1,15 @@
 package parser;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Vector;
-
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
-import org.json.*;
+
 /**
  * Questa classe è necessaria per ordinare i dati presi in input da una API esterna
  * 
@@ -22,14 +18,11 @@ import org.json.*;
  */
 
 public class ParserJSON {
-
+	
 	private JSONObject jo = null; // creo un oggetto di tipo JSON
 	private double speed; 
 	private long deg;
 	private long vis;
-    private Vector <Double> vettoreVel = new Vector <Double> ();
-    private Vector <Long> vettoreDeg = new Vector <Long> ();
-    private Vector <Long> vettoreVis = new Vector <Long> ();
     
 
 	/**
@@ -78,36 +71,7 @@ public class ParserJSON {
 				vis = (Long) jo.get("visibility"); // cerca il campo visibility e salva il suo contenuto in una variabile vis
 		} catch (IOException | ParseException e) { // cerca eccezioni di I/O o errori di parsing
 			e.printStackTrace();
-		} catch (Exception e) { // cerca eccezioni ogni tipo
-			e.printStackTrace();
-		}
-	}
-	
-	public void chiamataDaFile(String NomeFile) {
-		try {
-			
-						
-			String data = "";
-			String line = "";
-			FileInputStream file = new FileInputStream (NomeFile);
-			InputStreamReader input = new InputStreamReader (file);
-			try {
-				BufferedReader Bread = new BufferedReader(input);
-				while ( ( line = Bread.readLine() ) != null ) {
-				   data+= line; //mi salvo il contenuto del JSON in una string data
-			   }
-			} finally {
-			  input.close();
-			}
-				this.jo = (JSONObject) JSONValue.parseWithException(data); // effettuo il parsing di data
-				for(int i =0; i < 85; i++) {
-				vettoreVel.add((Double) jo.get("velocitaVento")); 
-				vettoreDeg.add((Long) jo.get("angoloVento")); 
-				vettoreVis.add((Long) jo.get("vis"));
-				}
-		} catch (IOException | ParseException e) { // cerca eccezioni di I/O o errori di parsing
-			e.printStackTrace();
-		} catch (Exception e) { // cerca eccezioni ogni tipo
+		} catch (Exception e) { // cerca eccezioni di ogni tipo
 			e.printStackTrace();
 		}
 	}
@@ -139,42 +103,4 @@ public class ParserJSON {
 		return vis;
 	}
 
-	public Vector<Double> getVettoreVel() {
-		return vettoreVel;
-	}
-
-	public void setVettoreVel(Vector<Double> vettoreVel) {
-		this.vettoreVel = vettoreVel;
-	}
-
-	public Vector<Long> getVettoreDeg() {
-		return vettoreDeg;
-	}
-
-	public void setVettoreDeg(Vector<Long> vettoreDeg) {
-		this.vettoreDeg = vettoreDeg;
-	}
-
-	public Vector<Long> getVettoreVis() {
-		return vettoreVis;
-	}
-
-	public void setVettoreVis(Vector<Long> vettoreVis) {
-		this.vettoreVis = vettoreVis;
-	}
-
-
-
-	public void setSpeed(double speed) {
-		this.speed = speed;
-	}
-
-	public void setDeg(long deg) {
-		this.deg = deg;
-	}
-
-	public void setVis(long vis) {
-		this.vis = vis;
-	}
-	
 }

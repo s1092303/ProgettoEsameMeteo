@@ -1,5 +1,9 @@
 package it.univpm.ProgettoOOPMeteo.Controller;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.json.simple.parser.ParseException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,6 +13,7 @@ import Filtri.FiltroPerNome;
 import Filtri.StatisticheVentoGiornaliere;
 import citta.Citta;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
+import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 
 /**
  * Controller del codice per utilizzare i metodi attraverso URL
@@ -43,8 +48,8 @@ public class ControllerMeteo {
 	}
 
 	@GetMapping("/ListaDaFile")
-	public ElaborazioneDati esempiodafile () {
-		ElaborazioneDati p = new ElaborazioneDati("Storicocittà.txt");
+	public ElaborazioneDatiDaFile esempiodafile () throws ParseException, FileNotFoundException, IOException {
+		ElaborazioneDatiDaFile p = new ElaborazioneDatiDaFile();
 		return p;
 	}
 }
