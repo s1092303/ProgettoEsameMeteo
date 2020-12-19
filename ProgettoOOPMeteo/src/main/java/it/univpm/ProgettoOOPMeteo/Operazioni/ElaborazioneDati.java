@@ -33,7 +33,9 @@ public class ElaborazioneDati {
 			for (int j=0; j<=85; j++) {
 				
 			c.SetPosVel( Math.random() * 10);
-			c.SetPosVis( (long) ((Math.random() * 2000)+8000));}
+			c.SetPosVis( (long) ((Math.random() * 2000)+8000));
+			c.SetPosAng((long) (Math.random() * 270));
+			}
 			
 			
 			Listacitta.add(c);
