@@ -51,7 +51,7 @@ public class Statistiche {
 			for (int i=inizio; i<=fine ; i++) {
 		    	somma += citta.getPosVisibilita(i);
 		    }
-			return somma/(fine - inizio);
+			return somma/((fine+1) - inizio);
 	}
 		
 	
@@ -72,7 +72,7 @@ public class Statistiche {
 	for (int i=inizio; i<=fine; i++) {
 		somma += (citta.getPosVelocita(i) - media)*(citta.getPosVelocita(i) - media);
 		}
-	return somma/(fine - inizio);
+	return somma/((fine+1) - inizio);
 }
 	
 
@@ -94,7 +94,7 @@ public class Statistiche {
 	for (int i=inizio; i<=fine; i++) {
 		somma += (citta.getPosVisibilita(i) - media)*(citta.getPosVisibilita(i) - media);
 		}
-	return somma/(fine - inizio);
+	return somma/((fine+1) - inizio);
 }
 	 
 

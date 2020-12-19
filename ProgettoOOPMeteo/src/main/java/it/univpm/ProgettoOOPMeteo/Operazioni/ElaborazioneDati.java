@@ -24,21 +24,18 @@ public class ElaborazioneDati {
 		ID.add("london,uk");
 		ID.add("rome");
 		ID.add("amsterdam");
+		ID.add("Madrid");
+		ID.add("Paris");
 		for (int i = 0; i < ID.size(); i++) {
 			Citta c = new Citta();
 			c.setNome(ID.get(i));
-			url = "https://api.openweathermap.org/data/2.5/weather?q=" + ID.get(i) + 
-					"&appid=bcf6ba556143b256c30423368e21ab52"; 
-			parser.chiamataAPI(url);
-			c.SetPosVel(parser.getSpeed());
-			c.SetPosVel(1.5);
-			c.SetPosVis((long) 9000);
-			c.SetPosAng(parser.getDeg());
-			c.SetPosVel(1.5);
-			c.SetPosVis((long) 9000);
-			c.SetPosVis(parser.getVis());
-			c.SetPosVel(1.5);
-			c.SetPosVis((long) 9000);
+			
+			for (int j=0; j<=85; j++) {
+				
+			c.SetPosVel( Math.random() * 10);
+			c.SetPosVis( (long) ((Math.random() * 2000)+8000));}
+			
+			
 			Listacitta.add(c);
 		}
 		
