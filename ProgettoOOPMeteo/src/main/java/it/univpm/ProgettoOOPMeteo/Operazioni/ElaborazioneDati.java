@@ -32,7 +32,7 @@ public class ElaborazioneDati {
 			url = "https://api.openweathermap.org/data/2.5/weather?q=" + ID.get(i) + 
 					"&appid=bcf6ba556143b256c30423368e21ab52"; 
 			parser.chiamataAPI(url);
-			c.SetPosVel(parser.getSpeed());
+			c.setVelocitaVento(parser.getVettoreVel());
 			c.SetPosAng(parser.getDeg());
 			c.SetPosVis(parser.getVis());
 			Listacitta.add(c);
@@ -56,6 +56,7 @@ public class ElaborazioneDati {
 			c.setVelocitaVento(parser.getVettoreVel());
 			c.setAngoloVento(parser.getVettoreDeg());
 			c.setVis(parser.getVettoreVis());
+			Listacitta.add(c);
 		}
 	}
 

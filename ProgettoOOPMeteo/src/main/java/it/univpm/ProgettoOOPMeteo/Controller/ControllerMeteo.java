@@ -44,7 +44,7 @@ public class ControllerMeteo {
 
 	@GetMapping("/ListaDaFile")
 	public ElaborazioneDati esempiodafile () {
-		ElaborazioneDati p = new ElaborazioneDati("Storicocitta.txt");
+		ElaborazioneDati p = new ElaborazioneDati("Storicocittà.txt");
 		return p;
 	}
 }

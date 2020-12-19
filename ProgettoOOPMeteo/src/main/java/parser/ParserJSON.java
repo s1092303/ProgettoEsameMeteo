@@ -13,7 +13,7 @@ import java.util.Vector;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
-
+import org.json.*;
 /**
  * Questa classe è necessaria per ordinare i dati presi in input da una API esterna
  * 
@@ -104,10 +104,10 @@ public class ParserJSON {
 				this.jo = (JSONObject) JSONValue.parseWithException(data); // effettuo il parsing di data
 				
 				
-				
-				vettoreVel =  (Vector<Double>) jo.get("velocitaVento"); //all'interno del campo wind cerca il campo speed e salvo il contenuto in una variabile speed
-				vettoreDeg = (Vector<Long>) jo.get("angoloVento"); // successivamente cerca anche il campo deg (angolo del vento) e salvo il contenuto in una variabile deg
-				vettoreVis =  (Vector<Long>) jo.get("vis"); // cerca il campo visibility e salva il suo contenuto in una variabile vis
+				for(int i =0; i< 85; i++) {
+				vettoreVel.add((Double) jo.get("velocitaVento")); //all'interno del campo wind cerca il campo speed e salvo il contenuto in una variabile speed
+				vettoreDeg.add((Long) jo.get("angoloVento")); // successivamente cerca anche il campo deg (angolo del vento) e salvo il contenuto in una variabile deg
+				vettoreVis.add((Long) jo.get("vis"));} // cerca il campo visibility e salva il suo contenuto in una variabile vis
 		} catch (IOException | ParseException e) { // cerca eccezioni di I/O o errori di parsing
 			e.printStackTrace();
 		} catch (Exception e) { // cerca eccezioni ogni tipo
