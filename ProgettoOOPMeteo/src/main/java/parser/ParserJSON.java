@@ -92,9 +92,7 @@ public class ParserJSON {
 			FileInputStream file = new FileInputStream (NomeFile);
 			InputStreamReader input = new InputStreamReader (file);
 			try {
-				
 				BufferedReader Bread = new BufferedReader(input);
-			   
 				while ( ( line = Bread.readLine() ) != null ) {
 				   data+= line; //mi salvo il contenuto del JSON in una string data
 			   }
@@ -102,12 +100,11 @@ public class ParserJSON {
 			  input.close();
 			}
 				this.jo = (JSONObject) JSONValue.parseWithException(data); // effettuo il parsing di data
-				
-				
-				for(int i =0; i< 85; i++) {
-				vettoreVel.add((Double) jo.get("velocitaVento")); //all'interno del campo wind cerca il campo speed e salvo il contenuto in una variabile speed
-				vettoreDeg.add((Long) jo.get("angoloVento")); // successivamente cerca anche il campo deg (angolo del vento) e salvo il contenuto in una variabile deg
-				vettoreVis.add((Long) jo.get("vis"));} // cerca il campo visibility e salva il suo contenuto in una variabile vis
+				for(int i =0; i < 85; i++) {
+				vettoreVel.add((Double) jo.get("velocitaVento")); 
+				vettoreDeg.add((Long) jo.get("angoloVento")); 
+				vettoreVis.add((Long) jo.get("vis"));
+				}
 		} catch (IOException | ParseException e) { // cerca eccezioni di I/O o errori di parsing
 			e.printStackTrace();
 		} catch (Exception e) { // cerca eccezioni ogni tipo
