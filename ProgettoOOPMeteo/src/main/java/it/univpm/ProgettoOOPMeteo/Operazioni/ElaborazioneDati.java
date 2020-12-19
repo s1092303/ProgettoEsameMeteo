@@ -40,6 +40,25 @@ public class ElaborazioneDati {
 		
 	}
 	
+	public ElaborazioneDati (String NomeFile) {
+		
+		Vector<String> ID = new Vector<String> ();
+        ParserJSON parser = new ParserJSON();
+		ID.add("london,uk");
+		ID.add("rome");
+		ID.add("amsterdam");
+		ID.add("Madrid");
+		ID.add("Paris");
+		
+		for (int i=0; i<ID.size(); i++) {
+			Citta c = new Citta();
+			parser.chiamataDaFile(NomeFile);
+			c.setVelocitaVento(parser.getVettoreVel());
+			c.setAngoloVento(parser.getVettoreDeg());
+			c.setVis(parser.getVettoreVis());
+		}
+	}
+
 	/**
 	 * Restituisce il vettore Listacitta
 	 * @return Listacitta
