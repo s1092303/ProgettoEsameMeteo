@@ -29,15 +29,12 @@ public class ElaborazioneDati {
 		for (int i = 0; i < ID.size(); i++) {
 			Citta c = new Citta();
 			c.setNome(ID.get(i));
-			
-			for (int j=0; j<=85; j++) {
-				
-			c.SetPosVel( Math.random() * 10);
-			c.SetPosVis( (long) ((Math.random() * 2000)+8000));
-			c.SetPosAng((long) (Math.random() * 270));
-			}
-			
-			
+			url = "https://api.openweathermap.org/data/2.5/weather?q=" + ID.get(i) + 
+					"&appid=bcf6ba556143b256c30423368e21ab52"; 
+			parser.chiamataAPI(url);
+			c.SetPosVel(parser.getSpeed());
+			c.SetPosAng(parser.getDeg());
+			c.SetPosVis(parser.getVis());
 			Listacitta.add(c);
 		}
 		
