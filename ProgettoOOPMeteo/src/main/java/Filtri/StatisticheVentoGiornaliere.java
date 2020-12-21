@@ -7,7 +7,7 @@ import java.util.Vector;
 
 import citta.CittaMediaVar;
 
-public class StatisticheVentoGiornaliere {
+public class StatisticheVentoGiornaliere extends Statistiche{
 
 	
 
