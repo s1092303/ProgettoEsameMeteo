@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Filtri.FiltroPerNome;
-import Filtri.StatisticheVentoAScelta;
-import Filtri.StatisticheVentoGiornaliere;
+import Filtri.StatisticheAScelta;
+import Filtri.StatisticheGiornaliere;
 import citta.Citta;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
@@ -43,8 +43,8 @@ public class ControllerMeteo {
 	}
 	
 	@GetMapping("/statsVento")
-	public StatisticheVentoAScelta method2() throws FileNotFoundException, IOException, ParseException {
-		StatisticheVentoAScelta p = new StatisticheVentoAScelta(0,20);
+	public StatisticheAScelta method2() throws FileNotFoundException, IOException, ParseException {
+		StatisticheAScelta p = new StatisticheAScelta(0,20);
 		return p;
 	}
 
@@ -53,4 +53,11 @@ public class ControllerMeteo {
 		ElaborazioneDatiDaFile p = new ElaborazioneDatiDaFile();
 		return p;
 	}
-}
+	
+	@GetMapping("/StatisticheGiorno")
+	public StatisticheGiornaliere method3(@RequestParam (value = "param" ,required = false)int param) throws FileNotFoundException, IOException, ParseException {
+	StatisticheGiornaliere p = new StatisticheGiornaliere (param);
+	return p;
+	}
+	}
+

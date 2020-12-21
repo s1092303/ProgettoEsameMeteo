@@ -11,15 +11,15 @@ import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 import it.univpm.ProgettoOOPMeteo.Operazioni.Statistiche;
 
 
-public class StatisticheVentoAScelta {
+public class StatisticheAScelta {
 
 	private Vector<CittaMediaVar> vettore = new Vector<CittaMediaVar> ();
 	
-	private int inizio = 0;
-	private int fine = 0;
+	protected int inizio = 0;
+	protected int fine = 0;
 	
 	
-	public StatisticheVentoAScelta(int inizio, int fine) throws FileNotFoundException, IOException, ParseException {
+	public StatisticheAScelta(int inizio, int fine) throws FileNotFoundException, IOException, ParseException {
 		this.inizio = inizio;
 		this.fine = fine;
 		
