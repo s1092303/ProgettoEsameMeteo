@@ -8,6 +8,14 @@ import org.json.simple.parser.ParseException;
 import citta.Citta;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 
+/**
+ *  
+ * 
+ * @author Nicola Ronchini, Tommaso Omiccioli
+ *
+ */
+
+
 public class FiltroPerNome {
 	
 	private Citta citta;
