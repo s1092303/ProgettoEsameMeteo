@@ -6,8 +6,8 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 
 /**
- * Questa classe derivando dalla classe StatisticheASceltaPerCitta permette di avere le stesse funzionaita di quest'ultima ma 
- * implementando la possibilita da parte del'utente di ricevere le statistiche di una citta in una settimana definita andando esclusivamente 
+ * Questa classe derivando dalla classe StatisticheASceltaPerCitta permette di avere le stesse funzionalita di quest'ultima ma 
+ * implementando la possibilita da parte dell'utente di ricevere le statistiche di una citta in una settimana definita andando esclusivamente 
  * ad indicare  il numero di quella settimana.
  * 
  * @author Nicola Ronchini, tommaso omiccioli
@@ -19,7 +19,7 @@ public class StatisticheSettimanaliPerCitta extends StatisticheASceltaPerCitta {
 	private String nome;
 	
 	/**
-	 * Costruttore della classe permette di passare automaticamente alla classe StatisticheASceltaPerCitta i valori di inizo e fine indicando solo il numero della settimana
+	 * Costruttore della classe che permette di passare automaticamente alla classe StatisticheASceltaPerCitta i valori di inizio e fine indicando solo il numero della settimana
 	 * che si vuole passare e il nome della citta
 	 * @param nome
 	 * @param settimana

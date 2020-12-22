@@ -10,8 +10,8 @@ import citta.CittaMediaVar;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 import it.univpm.ProgettoOOPMeteo.Operazioni.Statistiche;
 /**
- * Questa classe permette di inizzializzare un vettore di CittaMediaVar per tutte le citta disponibili nello storico e vengono poi calcolate le statistiche 
- *  dell'intervallo che vogliamo prendere in considerazione andando a passare gli istanti di inizo e fine
+ * Questa classe permette di inizializzare un vettore di CittaMediaVar per tutte le citta disponibili nello storico calcolando poi le statistiche 
+ *  dell'intervallo che vogliamo prendere in considerazione andando a passare gli istanti di inizio e fine
  * 
  * @author Nicola Ronchini, tommaso omiccioli
  *
@@ -24,7 +24,7 @@ public class StatisticheAScelta {
 	protected int inizio = 0;
 	protected int fine = 0;
 /**
- * Costruttore della classe si occupa mediande unciclo di riempire il vettore  delle CittaMediaVar con tutte le caratteristiche 
+ * Costruttore della classe si occupa mediante un ciclo di riempire il vettore  delle CittaMediaVar con tutte le caratteristiche 
  * delle citta nello storico
  * 	
  * @param inizio
@@ -40,16 +40,16 @@ public class StatisticheAScelta {
 		
 		ElaborazioneDatiDaFile d = new ElaborazioneDatiDaFile();
 		Statistiche s = new Statistiche();
-		for (int i = 0; i < d.getCity().size(); i++) {                                         //ciclo for per aggiungere al vettore ogni singoa citta un ciclo alla volta
-			CittaMediaVar c = new CittaMediaVar();                                             // crea un nuova CittaMediaVar
+		for (int i = 0; i < d.getCity().size(); i++) {                                         //ciclo for per aggiungere al vettore ogni singola citta un ciclo alla volta
+			CittaMediaVar c = new CittaMediaVar();                                             //crea un nuova CittaMediaVar
 			c.setNome(d.getCity().get(i).getNome());                                           //Inserisce il suo nome
 			c.setMediaVento(s.mediaVento(d.getCity().get(i), inizio, fine));                   //calcola la media del vento e la aggiunge alla classe
-			c.setVarianzaVento((s.varianzaVento(d.getCity().get(i), inizio, fine)));           //calcola la varianza del vento  e l'aggiunge alla class
-			c.setMediaVisibilita(s.mediaVisibilita(d.getCity().get(i), inizio, fine));         //calcola la media della visibilita l'aggiunge alla class
-			c.setVarianzaVisibilita((s.varianzaVisibilita(d.getCity().get(i), inizio, fine))); //calcola la varianza della visibilita e l'aggiunge alla class
-			c.setMediaAngoloVento(s.mediaAngoloVento(d.getCity().get(i), inizio, fine));       //calcola la media dell'angolo del vento e l'aggiunge alla class
-			c.setVarianzaAngoloVento(s.varianzaAngoloVento(d.getCity().get(i), inizio, fine)); //calcola la varianza dell'angolo del vento e l'aggiunge alla class
-			vettore.add(c);                                                                    //agginge la classe cittaMediaVar nel vettore 
+			c.setVarianzaVento((s.varianzaVento(d.getCity().get(i), inizio, fine)));           //calcola la varianza del vento  e l'aggiunge alla classe
+			c.setMediaVisibilita(s.mediaVisibilita(d.getCity().get(i), inizio, fine));         //calcola la media della visibilita l'aggiunge alla classe
+			c.setVarianzaVisibilita((s.varianzaVisibilita(d.getCity().get(i), inizio, fine))); //calcola la varianza della visibilita e l'aggiunge alla classe
+			c.setMediaAngoloVento(s.mediaAngoloVento(d.getCity().get(i), inizio, fine));       //calcola la media dell'angolo del vento e l'aggiunge alla classe
+			c.setVarianzaAngoloVento(s.varianzaAngoloVento(d.getCity().get(i), inizio, fine)); //calcola la varianza dell'angolo del vento e l'aggiunge alla classe
+			vettore.add(c);                                                                    //aggiunge la classe cittaMediaVar nel vettore 
 		}
 	}
 
