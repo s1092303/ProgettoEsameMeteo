@@ -5,11 +5,29 @@ import java.io.IOException;
 
 import org.json.simple.parser.ParseException;
 
+/**
+ * Questa classe derivando dalla classe StatisticheASceltaPerCitta permette di avere le stesse funzionaita di quest'ultima ma 
+ * implementando la possibilita da parte del'utente di ricevere le statistiche di una citta in un girono definito andando esclusivamente 
+ * ad indicare  il numero di quel girono.
+ * 
+ * @author Nicola Ronchini, tommaso omiccioli
+ *
+ */
 public class StatisticheGiornalierePerCitta extends StatisticheASceltaPerCitta {
 	
 	private int giorno;
-	private String nome;
+	private String nome;   //nome della citta
 	
+	/**
+	 * Costruttore della classe permette di passare automaticamente alla classe StatisticheASceltaPerCitta i valori di inizo e fine indicando solo il numero della giornata
+	 * che si vuole passare e il nome della citta
+	 * 
+	 * @param nome
+	 * @param giorno
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	public StatisticheGiornalierePerCitta (String nome, int giorno )throws FileNotFoundException, IOException, ParseException {
 		
 		super ((giorno-1)*12, (((giorno-1)*12)+11), nome);
@@ -17,13 +35,19 @@ public class StatisticheGiornalierePerCitta extends StatisticheASceltaPerCitta {
 		
 	}
 
-
+/**
+ * Modifica il giorno
+ * @param giorno
+ */
 
 	public void setGiorno(int giorno) {
 		this.giorno = giorno;
 	}
 
-
+/**
+ * Modifica il nome della citta
+ * @param nome
+ */
 
 	public void setNome(String nome) {
 		this.nome = nome;
