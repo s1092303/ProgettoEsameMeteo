@@ -43,7 +43,7 @@ public class StatisticheASceltaPerCitta {
 		Statistiche s = new Statistiche();            // creo una classe statistiche che mi calcoli i valori da inserire nella classe CittaMediVar
 		this.citta = fil.getCitta();                  // associo l?attributo citta della classe con il risultato del filtro
 		
-		CittaMediaVar cit = new CittaMediaVar (citta.getNome(), s.mediaVento(citta, inizio, fine), s.varianzaVento(citta, inizio, fine),s.mediaVisibilita(citta, inizio, fine),s.varianzaVisibilita(citta, inizio, fine));
+		CittaMediaVar cit = new CittaMediaVar (citta.getNome(), s.mediaVento(citta, inizio, fine), s.varianzaVento(citta, inizio, fine),s.mediaVisibilita(citta, inizio, fine),s.varianzaVisibilita(citta, inizio, fine), s.mediaAngoloVento(citta, inizio, fine), s.varianzaAngoloVento(citta, inizio, fine));
 		citt = cit;                                   //dopo aver creato la classe cit già direttamente inizializzata mediante il suo costruttore la utilizzo per inizallizare la classe attributo citt di questa classe
 	}
 	
