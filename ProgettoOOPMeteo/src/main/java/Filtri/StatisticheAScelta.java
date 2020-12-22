@@ -32,6 +32,8 @@ public class StatisticheAScelta {
 			c.setVarianzaVento((s.varianzaVento(d.getCity().get(i), inizio, fine)));
 			c.setMediaVisibilita(s.mediaVisibilita(d.getCity().get(i), inizio, fine));
 			c.setVarianzaVisibilita((s.varianzaVisibilita(d.getCity().get(i), inizio, fine)));
+			c.setMediaAngoloVento(s.mediaAngoloVento(d.getCity().get(i), inizio, fine));
+			c.setVarianzaAngoloVento(s.varianzaAngoloVento(d.getCity().get(i), inizio, fine));
 			vettore.add(c);
 		}
 	}

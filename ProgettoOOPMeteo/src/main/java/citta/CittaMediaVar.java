@@ -31,14 +31,14 @@ public class CittaMediaVar {
 	 * @param varianzaVisibilita
 	 */
 	
-	public CittaMediaVar(String nome, float mediaVento, float varianzaVento, float mediaVisibilita, float varianzaVisibilita) {
+	public CittaMediaVar(String nome, float mediaVento, float varianzaVento, float mediaVisibilita, float varianzaVisibilita, float mediaAngoloVento, float varianzaAngoloVento) {
 		this.nome = nome;
 		this.mediaVento = mediaVento;
 		this.varianzaVento = varianzaVento;
 		this.mediaVisibilita = mediaVisibilita;
 		this.varianzaVisiblita = varianzaVisibilita;
-		//this.mediaAngoloVento = mediaAngoloVento;
-	//	this.varianzaAngoloVento = varianzaAngoloVento;
+		this.mediaAngoloVento = mediaAngoloVento;
+		this.varianzaAngoloVento = varianzaAngoloVento;
 	}
 
 	/**

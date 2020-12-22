@@ -54,6 +54,25 @@ public class Statistiche {
 			return somma/((fine+1) - inizio);
 	}
 		
+		
+	 /**
+	  * Questo metodo si occupa di calcolare la media dell'inclinazione dei venti tra un rilevazione di inizio e una di fine
+	  * 
+	  * @param citta
+	  * @param inizio
+	  * @param fine
+	  * @return mediaAngoloVento
+	  */
+	
+	 public float mediaAngoloVento (Citta citta, int inizio, int fine){
+		
+	        float somma=0;
+		    
+			for (int i=inizio; i<=fine ; i++) {
+		    	somma += citta.getPosAngolo(i);
+		    }
+			return somma/((fine+1) - inizio);
+	}
 	
 	 /**
 	 * Questo metodo si occupa di calcolare la varianza della velocita del vento tra un rilevazione di inizio e una di fine
@@ -97,7 +116,25 @@ public class Statistiche {
 	return somma/((fine+1) - inizio);
 }
 	 
-
+   /**
+  	 * Questo metodo si occupa di calcolare la varianza del?inclinazione dei venti tra un rilevazione di inizio e una di fine
+  	 * 
+  	 * @param citta
+  	 * @param inizio
+  	 * @param fine
+  	 * @return varianzaAngoloVento
+  	 */
+     public float varianzaAngoloVento (Citta citta, int inizio, int fine) {
+  	
+  	float somma=0; 
+  	
+  	float media = mediaAngoloVento(citta, inizio, fine);
+  	
+  	for (int i=inizio; i<=fine; i++) {
+  		somma += (citta.getPosAngolo(i) - media)*(citta.getPosAngolo(i) - media);
+  		}
+  	return somma/((fine+1) - inizio);
+  }
 
 
 }
