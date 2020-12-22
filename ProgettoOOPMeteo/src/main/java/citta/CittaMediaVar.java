@@ -132,17 +132,37 @@ public class CittaMediaVar {
 		this.varianzaVisiblita = varianzaVisiblita;
 	}
 	
+	/**
+	 * Restituisce il valore di mediaAngoloVento
+	 * @return mediaAngoloVento
+	 */
+	
 	public float getMediaAngoloVento() {
 		return mediaAngoloVento;
 	}
+	
+	/**
+	 * Modifico il valore di mediaAngoloVento con uno preso in input
+	 * @param mediaAngoloVento
+	 */
 	
 	public void setMediaAngoloVento(float mediaAngoloVento) {
 		this.mediaAngoloVento = mediaAngoloVento;
 	}
 	
+	/**
+	 * Restituisce il valore di varianzaAngoloVento
+	 * @return varianzaAngoloVento
+	 */
+	
 	public float getVarianzaAngoloVento() {
 		return varianzaAngoloVento;
 	}
+	
+	/**
+	 * Modifico il valore di varianzaAngoloVento con uno preso in input
+	 * @param varianzaAngoloVento
+	 */
 	
 	public void setVarianzaAngoloVento(float varianzaAngoloVento) {
 		this.varianzaAngoloVento = varianzaAngoloVento;
