@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import Filtri.FiltroPerNome;
 import Filtri.StatisticheAScelta;
 import Filtri.StatisticheGiornaliere;
+import Filtri.StatisticheGiornalierePerCitta;
+import Filtri.StatisticheSettimanali;
+import Filtri.StatisticheSettimanaliPerCitta;
 import citta.Citta;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
@@ -57,6 +60,23 @@ public class ControllerMeteo {
 	@GetMapping("/StatisticheGiorno")
 	public StatisticheGiornaliere method3(@RequestParam (value = "param" ,required = false)int param) throws FileNotFoundException, IOException, ParseException {
 	StatisticheGiornaliere p = new StatisticheGiornaliere (param);
+	return p;
+	}
+	
+	@GetMapping("/StatisticheSettimana")
+	public StatisticheSettimanali method4(@RequestParam (value = "param" ,required = false)int param) throws FileNotFoundException, IOException, ParseException {
+	StatisticheSettimanali p = new StatisticheSettimanali (param);
+	return p;
+	}
+	@GetMapping("/StatisticheGiornoCitta")
+	public StatisticheGiornalierePerCitta method5(@RequestParam (value = "NomeCitta" ,required = false)String NomeCitta, @RequestParam(value = "Giorno" , required = false) int Giorno) throws FileNotFoundException, IOException, ParseException {
+	StatisticheGiornalierePerCitta p = new StatisticheGiornalierePerCitta (NomeCitta, Giorno);
+	return p;
+	}
+	
+	@GetMapping("/StatisticheSettimanaCitta")
+	public StatisticheSettimanaliPerCitta method6(@RequestParam (value = "NomeCitta" ,required = false)String NomeCitta, @RequestParam(value = "Settimana", required = false )int Settimana) throws FileNotFoundException, IOException, ParseException {
+	StatisticheSettimanaliPerCitta p = new StatisticheSettimanaliPerCitta (NomeCitta, Settimana);
 	return p;
 	}
 	}

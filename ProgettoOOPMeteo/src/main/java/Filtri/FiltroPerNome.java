@@ -1,16 +1,22 @@
 package Filtri;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.json.simple.parser.ParseException;
+
 import citta.Citta;
-import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
+import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 
 public class FiltroPerNome {
 	
 	private Citta citta;
 
-	public FiltroPerNome(String DaInserire) {
-		ElaborazioneDati d = new ElaborazioneDati();
-		for (int i = 0; i < d.getListacitta().size(); i++) 
-			if (DaInserire.equals(d.getListacitta().get(i).getNome())) citta = d.getListacitta().get(i);
+	public FiltroPerNome(String DaInserire) throws FileNotFoundException, IOException, ParseException {
+		ElaborazioneDatiDaFile d = new ElaborazioneDatiDaFile();
+		
+		for (int i = 0; i < d.getCity().size(); i++) 
+			if (DaInserire.equals(d.getCity().get(i).getNome())) citta = d.getCity().get(i);
 	}
 	
 	public Citta getCitta() {
