@@ -15,6 +15,7 @@ import Filtri.StatisticheGiornaliere;
 import Filtri.StatisticheGiornalierePerCitta;
 import Filtri.StatisticheSettimanali;
 import Filtri.StatisticheSettimanaliPerCitta;
+import Filtri.StatisticheVento;
 import citta.Citta;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
@@ -78,5 +79,12 @@ public class ControllerMeteo {
 	public StatisticheSettimanaliPerCitta method6(@RequestParam (value = "NomeCitta" ,required = false)String NomeCitta, @RequestParam(value = "Settimana", required = false )int Settimana) throws FileNotFoundException, IOException, ParseException {
 	StatisticheSettimanaliPerCitta p = new StatisticheSettimanaliPerCitta (NomeCitta, Settimana);
 	return p;
+	}
+	
+	@GetMapping("/CittaEstremiVelocita")
+	public StatisticheVento method7 (@RequestParam (value = "inizio" ,required = false)int inizio, @RequestParam(value = "fine", required = false )int fine) throws FileNotFoundException, IOException, ParseException {
+	StatisticheVento p = new StatisticheVento (inizio, fine);
+	return p;
+		
 	}
 	}
