@@ -31,67 +31,6 @@ import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 @RestController
 public class ControllerMeteo {
 
-	@GetMapping("/ListaCitta")
-	public ElaborazioneDati exampleMethod () {
-		ElaborazioneDati p = new ElaborazioneDati();
-		return p;
-	}
 	
-	@PostMapping("/nomeCitta")
-	public Citta method(@RequestParam(name = "param", required = false) String param) {
-		try {
-			FiltroPerNome f = new FiltroPerNome(param);
-			return f.getCitta();
-		} catch (Exception e) {
-			return null;
-		}
-	}
-	
-	@GetMapping("/statsVento")
-	public StatisticheAScelta method2() throws FileNotFoundException, IOException, ParseException {
-		StatisticheAScelta p = new StatisticheAScelta(0,20);
-		return p;
-	}
-
-	@GetMapping("/ListaDaFile")
-	public ElaborazioneDatiDaFile esempiodafile () throws ParseException, FileNotFoundException, IOException {
-		ElaborazioneDatiDaFile p = new ElaborazioneDatiDaFile();
-		return p;
-	}
-	
-	@GetMapping("/StatisticheGiorno")
-	public StatisticheGiornaliere method3(@RequestParam (value = "param" ,required = false)int param) throws FileNotFoundException, IOException, ParseException {
-	StatisticheGiornaliere p = new StatisticheGiornaliere (param);
-	return p;
-	}
-	
-	@GetMapping("/StatisticheSettimana")
-	public StatisticheSettimanali method4(@RequestParam (value = "param" ,required = false)int param) throws FileNotFoundException, IOException, ParseException {
-	StatisticheSettimanali p = new StatisticheSettimanali (param);
-	return p;
-	}
-	@GetMapping("/StatisticheGiornoCitta")
-	public StatisticheGiornalierePerCitta method5(@RequestParam (value = "NomeCitta" ,required = false)String NomeCitta, @RequestParam(value = "Giorno" , required = false) int Giorno) throws FileNotFoundException, IOException, ParseException {
-	StatisticheGiornalierePerCitta p = new StatisticheGiornalierePerCitta (NomeCitta, Giorno);
-	return p;
-	}
-	
-	@GetMapping("/StatisticheSettimanaCitta")
-	public StatisticheSettimanaliPerCitta method6(@RequestParam (value = "NomeCitta" ,required = false)String NomeCitta, @RequestParam(value = "Settimana", required = false )int Settimana) throws FileNotFoundException, IOException, ParseException {
-	StatisticheSettimanaliPerCitta p = new StatisticheSettimanaliPerCitta (NomeCitta, Settimana);
-	return p;
-	}
-	
-	@GetMapping("/CittaEstremiVelocita")
-	public StatisticheVento method7 (@RequestParam (value = "inizio" ,required = false)int inizio, @RequestParam(value = "fine", required = false )int fine) throws FileNotFoundException, IOException, ParseException {
-	StatisticheVento p = new StatisticheVento (inizio, fine);
-	return p;
-		}
-	
-	@GetMapping("/CittaEstremiVisibilita")
-	public StatisticheVisibilita method8 (@RequestParam (value = "inizio" ,required = false)int inizio, @RequestParam(value = "fine", required = false )int fine) throws FileNotFoundException, IOException, ParseException {
-	StatisticheVisibilita p = new StatisticheVisibilita (inizio, fine);
-	return p;
-		}
 	
 	}
