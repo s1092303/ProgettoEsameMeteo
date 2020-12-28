@@ -49,5 +49,51 @@ public class ControllerMeteo {
 		}
 	}
 	
+	@GetMapping("/EstremiStatisticheVento") 
+	public StatisticheVento method1() throws FileNotFoundException, IOException, ParseException {
+		StatisticheVento wind = new StatisticheVento(0, 85);
+		return wind;		
+	}
+
+	@GetMapping("/EstremiStatisticheVisibilita") 
+	public StatisticheVisibilita method2() throws FileNotFoundException, IOException, ParseException {
+		StatisticheVisibilita vis = new StatisticheVisibilita(0, 85);
+		return vis;		
+	}
 	
+	@GetMapping("/StatsAScelta")
+	public Vector<CittaMediaVar> method3(
+			@RequestParam(defaultValue = "1", required = false) String nome,
+			@RequestParam(defaultValue = "1", required = false) String Campionamento,
+			@RequestParam(defaultValue = "1", required = false) Integer giorno,
+			@RequestParam(defaultValue = "0", required = false) Integer inizio,
+			@RequestParam(defaultValue = "85", required = false) Integer fine) throws FileNotFoundException, IOException, ParseException {
+		if (nome.equals("1")) {
+			if (Campionamento.equals("1")) {
+				StatisticheAScelta s = new StatisticheAScelta(inizio,fine);
+				return s.getVettore();
+			}
+			else if (Campionamento.equals("Giornaliero")) {
+				if (giorno > 7) return null;
+				StatisticheGiornaliere s = new StatisticheGiornaliere(giorno);
+				return s.getVettore();
+			}
+		}
+		else {
+			if (Campionamento.equals("1")) {
+				StatisticheASceltaPerCitta s = new StatisticheASceltaPerCitta(inizio,fine, nome);
+				Vector<CittaMediaVar> StatisticheASceltaPerCitta = new Vector<CittaMediaVar> ();
+				StatisticheASceltaPerCitta.add(s.getCittaMediaVar()); 
+				return StatisticheASceltaPerCitta;
+			}
+			else if (Campionamento.equals("Giornaliero")) {
+				if (giorno > 7) return null;
+				StatisticheGiornalierePerCitta s = new StatisticheGiornalierePerCitta(nome, giorno);
+				Vector<CittaMediaVar> StatisticheGiornalierePerCitta = new Vector<CittaMediaVar> ();
+				StatisticheGiornalierePerCitta.add(s.getCittaMediaVar());
+				return StatisticheGiornalierePerCitta;
+			}
+		}
+		return null;
+	}
 }

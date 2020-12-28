@@ -29,7 +29,7 @@ public class StatisticheSettimanali extends StatisticheAScelta{
 	 * @throws ParseException
 	 */
 	public StatisticheSettimanali(int settimana  ) throws FileNotFoundException, IOException, ParseException{
-		super ((settimana-1)*12, (((settimana-1)*12)+83));
+		super ((settimana-1)*12, (((settimana-1)*12)+6));
 		this.settimana = settimana;
 		}
 
