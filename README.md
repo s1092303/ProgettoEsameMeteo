@@ -21,3 +21,7 @@ Diagramma delle classi
 [![Operazioni.png](https://i.postimg.cc/5ybBFCs2/Operazioni.png)](https://postimg.cc/cgkgprqp)
 
 [![Parser.png](https://i.postimg.cc/5tzL73Gt/Parser.png)](https://postimg.cc/NygKL1Qh)
+
+Diagramma delle sequenze
+
+[![diagramma-delle-sequenze.png](https://i.postimg.cc/65T7bc4N/diagramma-delle-sequenze.png)](https://postimg.cc/hfWPf90C)
