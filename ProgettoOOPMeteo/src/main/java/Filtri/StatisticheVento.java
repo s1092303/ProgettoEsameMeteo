@@ -84,7 +84,7 @@ public class StatisticheVento {
 	}
 
 /**
- * Contente di modificare il vettore MaxMediaVento
+ * Consente di modificare il vettore MaxMediaVento
  * @param maxMediaVento
  */
 	public void setMaxMediaVento(Vector<CittaMediaVar> maxMediaVento) {
@@ -100,7 +100,7 @@ public class StatisticheVento {
 	}
 
 	/**
-	 * Contente di modificare il vettore MinMediaVento
+	 * Consente di modificare il vettore MinMediaVento
 	 * @param maxMediaVento
 	 */
 	public void setMinMediaVento(Vector<CittaMediaVar> minMediaVento) {
@@ -116,7 +116,7 @@ public class StatisticheVento {
 	}
 
 	/**
-	 * Contente di modificare il vettore MaxVarianzaVento
+	 * Consente di modificare il vettore MaxVarianzaVento
 	 * @param maxMediaVento
 	 */
 	public void setMaxVarianzaVento(Vector<CittaMediaVar> maxVarianzaVento) {
@@ -132,7 +132,7 @@ public class StatisticheVento {
 	}
 
 	/**
-	 * Contente di modificare il vettore MinVarianzaVento
+	 * Consente di modificare il vettore MinVarianzaVento
 	 * @param maxMediaVento
 	 */
 	public void setMinVarianzaVento(Vector<CittaMediaVar> minVarianzaVento) {
