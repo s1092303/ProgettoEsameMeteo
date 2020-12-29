@@ -25,7 +25,7 @@ import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDati;
 import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 
 /**
- * Controller del codice per utilizzare i metodi attraverso URL
+ * Controller del codice per utilizzare i metodi attraverso postaman o un motore di ricerca
  * 
  * @author Nicola Ronchini, Tommaso Omiccioli
  *
@@ -34,6 +34,16 @@ import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 @RestController
 public class ControllerMeteo {
 
+	/**
+	 * Questa prima rotta permette di scegliere cosa stampare in output (o la lista completa di tutte le città, in caso l'utente
+	 * non specifica niente, o una a scelta, inserendo il nome)
+	 * @param NomeCitta
+	 * @return un vettore di citta sulla base di quello che ha scelto l'utente
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	
 	@GetMapping("/ListaCitta") 
 	public Vector<CittaMediaVar> exampleMethod(
 			@RequestParam(required = false, defaultValue = "1") String NomeCitta) throws FileNotFoundException, IOException, ParseException {
@@ -49,17 +59,50 @@ public class ControllerMeteo {
 		}
 	}
 	
+	/**
+	 * Questo metodo stampa in output le citta che hanno media e varianza minima/massima della ventosità
+	 * @return un vettore di citta
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	
 	@GetMapping("/EstremiStatisticheVento") 
 	public StatisticheVento method1() throws FileNotFoundException, IOException, ParseException {
 		StatisticheVento wind = new StatisticheVento(0, 85);
 		return wind;		
 	}
+	
+	/**
+	 * Questo metodo stampa in output le citta che hanno media e varianza minima/massima della visibilità
+	 * @return un vettore di citta
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 
 	@GetMapping("/EstremiStatisticheVisibilita") 
 	public StatisticheVisibilita method2() throws FileNotFoundException, IOException, ParseException {
 		StatisticheVisibilita vis = new StatisticheVisibilita(0, 85);
 		return vis;		
 	}
+	
+	/**
+	 * Questo metodo stampa le statistiche in base a ciò che gli passa l'utente.
+	 * Il primo parametro passabile è il nome della città( in caso non venga passato niente il metodo stampa tutto il vettore).
+	 * Il secondo parametro specifica il tempo di campionamento per controllare un giorno in particolare ( se non viene inserito il metodo stampa le statistiche per tutta la settimana).
+	 * Il parametro giorno serve per scegliere un determinato giorno( per default è il primo).
+	 * Gli ultimi due parametri servono per specificare l'inizio e la fine in caso non si sia scelto il campionamento giornaliero.
+	 * @param nome
+	 * @param Campionamento
+	 * @param giorno
+	 * @param inizio
+	 * @param fine
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	
 	@GetMapping("/StatsAScelta")
 	public Vector<CittaMediaVar> method3(
