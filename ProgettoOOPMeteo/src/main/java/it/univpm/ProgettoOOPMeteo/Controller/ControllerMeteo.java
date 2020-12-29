@@ -69,7 +69,7 @@ public class ControllerMeteo {
 	
 	@GetMapping("/EstremiStatisticheVento") 
 	public StatisticheVento method1() throws FileNotFoundException, IOException, ParseException {
-		StatisticheVento wind = new StatisticheVento(0, 85);
+		StatisticheVento wind = new StatisticheVento(0, 83);
 		return wind;		
 	}
 	
@@ -110,27 +110,29 @@ public class ControllerMeteo {
 			@RequestParam(defaultValue = "1", required = false) String Campionamento,
 			@RequestParam(defaultValue = "1", required = false) Integer giorno,
 			@RequestParam(defaultValue = "0", required = false) Integer inizio,
-			@RequestParam(defaultValue = "85", required = false) Integer fine) throws FileNotFoundException, IOException, ParseException {
+			@RequestParam(defaultValue = "83", required = false) Integer fine) throws FileNotFoundException, IOException, ParseException {
 		if (nome.equals("1")) {
 			if (Campionamento.equals("1")) {
+				if (inizio > fine) return null;
 				StatisticheAScelta s = new StatisticheAScelta(inizio,fine);
 				return s.getVettore();
 			}
 			else if (Campionamento.equals("Giornaliero")) {
-				if (giorno > 7) return null;
+				if (giorno > 7 || giorno < 1) return null;
 				StatisticheGiornaliere s = new StatisticheGiornaliere(giorno);
 				return s.getVettore();
 			}
 		}
 		else {
 			if (Campionamento.equals("1")) {
+				if (inizio > fine || inizio < 0 || inizio > 83 || fine < 0 || fine > 83) return null;
 				StatisticheASceltaPerCitta s = new StatisticheASceltaPerCitta(inizio,fine, nome);
 				Vector<CittaMediaVar> StatisticheASceltaPerCitta = new Vector<CittaMediaVar> ();
 				StatisticheASceltaPerCitta.add(s.getCittaMediaVar()); 
 				return StatisticheASceltaPerCitta;
 			}
 			else if (Campionamento.equals("Giornaliero")) {
-				if (giorno > 7) return null;
+				if (giorno > 7 || giorno < 1) return null;
 				StatisticheGiornalierePerCitta s = new StatisticheGiornalierePerCitta(nome, giorno);
 				Vector<CittaMediaVar> StatisticheGiornalierePerCitta = new Vector<CittaMediaVar> ();
 				StatisticheGiornalierePerCitta.add(s.getCittaMediaVar());
