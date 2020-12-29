@@ -40,7 +40,8 @@ public class FiltroPerNome {
 	 * @return Citta
 	 */
 	public Citta getCitta() {
-		return citta;
+		if (citta == null) return null;
+		else return citta;
 	}
 
 }
