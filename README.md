@@ -45,8 +45,45 @@ Il programma permette di visualizzare le statistiche di alcune capitali europee;
 
 I metodi possono essere richiamate attraverso postman insersendo le seguenti rotte:
 
-<pre><code> https://localhost:8080/ListaCitta</code></pre>
+<pre><code> http://localhost:8080/ListaCitta</code></pre>
 
 Questo primo metodo (GET) permette di visualizzare le statistiche settimanali di tutte le città nel caso non venga passato nessun parametro, mentre stampa le statistiche di una singola città inserendo l'ID all'interno di postman nei campi key, inserendo la stringa NomeCitta, e value (gli ID) oppure nel seguente modo (esempio con Roma):
 
-<pre><code> https://localhost:8080/ListaCitta?NomeCitta=rome</code></pre>
+<pre><code> http://localhost:8080/ListaCitta?NomeCitta=rome</code></pre>
+
+L'output verrà formattato in JSON.
+
+<pre><code> http://localhost:8080/EstremiStatisticheVento</code></pre>
+<pre><code> http://localhost:8080/EstremiStatisticheVisibilita</code></pre>
+
+Questi due metodi permettono di visualizzare le i valori massimi e minimi della media e della varianza rispettivamente alla ventosità e alla visiblità
+
+<pre><code> http://localhost:8080/StatsAScelta</code></pre>
+
+Questo metodo permette di visualizzare le statistiche scegliendo un periodo di campionamento (giornaliero o a intervalli di due ore). Si possono utilizzare diversi parametri quali l'ID della citta, il tipo di campionamento, il giorno, l'inizio e la fine.
+
+L'ID della città non è un parametro necessario, in caso non venga inserito il metodo stampa le statistiche di tutte le città. 
+
+Esempio:
+
+<pre><code> http://localhost:8080/StatsAScelta?nome=london,uk</code></pre>
+
+Il campionamento può essere specificato come "giornaliero" oppure si può evitare di specificarlo; in tal caso il programma prendere per default il campionamento ad intervalli di due ore. 
+
+Un esempio di utilizzo di questo parametro è il seguente:
+
+<pre><code> http://localhost:8080/StatsAScelta?Campionamento=giornaliero</code></pre>
+
+In questo modo il programma stamperà le statistiche giornaliere di tutte le città prendendo per default il primo giorno, nel caso che si voglia scegliere un giorno specifico si può utilizzare il terzo parametro "giorno", inserendo un numero da 1 a 7 ( se il numero non appartiene a questo intervallo il programma non ritorna niente).
+
+Per esempio la seguente rotta stampa le statistiche di Roma nel terzo giorno:
+
+<pre><code> http://localhost:8080/StatsAScelta?nome=rome&Campionamento=giornaliero&giorno=3 </code></pre>
+
+Non inserendo il tipo di campionamento il programma utilizzerà di default il campionamento per due ore. In questo caso è possibile usare i due parametri "inizio" e "fine".
+Il campionamento iniziale per prendere i dati è stato effettuato ad intervalli di due ore per una settimana, per cui il valori passati possono variare tra 0 e 83 (se il valore di inizio e maggiore di quello di fine il programma non ritornerà nulla).
+I valori di default di inizio e di fine sono rispettivamente 0 e 83.
+
+Per esempio, se voglio avere le statistiche di Parigi per il terzo e il quarto giorno dovrei scrivere: 
+
+<pre><code> http://localhost:8080/StatsAScelta?nome=Parigi&inizio=24&fine=47 </code></pre>
