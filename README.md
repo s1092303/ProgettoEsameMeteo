@@ -46,3 +46,7 @@ Il programma permette di visualizzare le statistiche di alcune capitali europee;
 I metodi possono essere richiamate attraverso postman insersendo le seguenti rotte:
 
 <pre><code> https://localhost:8080/ListaCitta</code></pre>
+
+Questo primo metodo (GET) permette di visualizzare le statistiche settimanali di tutte le città nel caso non venga passato nessun parametro, mentre stampa le statistiche di una singola città inserendo l'ID all'interno di postman nei campi key, inserendo la stringa NomeCitta, e value (gli ID) oppure nel seguente modo (esempio con Roma):
+
+<pre><code> https://localhost:8080/ListaCitta?NomeCitta=rome</code></pre>
