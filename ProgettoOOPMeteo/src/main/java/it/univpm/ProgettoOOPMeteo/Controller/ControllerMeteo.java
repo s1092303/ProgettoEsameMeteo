@@ -129,6 +129,7 @@ public class ControllerMeteo {
 				StatisticheASceltaPerCitta s = new StatisticheASceltaPerCitta(inizio,fine, nome);
 				Vector<CittaMediaVar> StatisticheASceltaPerCitta = new Vector<CittaMediaVar> ();
 				StatisticheASceltaPerCitta.add(s.getCittaMediaVar()); 
+				if (s.getCittaMediaVar() == null) return null;
 				return StatisticheASceltaPerCitta;
 			}
 			else if (Campionamento.equals("Giornaliero")) {

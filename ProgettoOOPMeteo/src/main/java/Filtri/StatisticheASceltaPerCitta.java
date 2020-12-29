@@ -34,7 +34,7 @@ public class StatisticheASceltaPerCitta {
  * @throws IOException
  * @throws ParseException
  */
-	public StatisticheASceltaPerCitta(int inizio, int fine, String nome) throws FileNotFoundException, IOException, ParseException {
+	public StatisticheASceltaPerCitta(int inizio, int fine, String nome) throws FileNotFoundException, IOException, ParseException, NullPointerException {
 		this.inizio = inizio;
 		this.fine = fine;
 		this.nome = nome;
@@ -42,9 +42,19 @@ public class StatisticheASceltaPerCitta {
 		FiltroPerNome fil = new FiltroPerNome (nome); //creo una classe filtro per nome per determinare quale citta dallo storico prendere
 		Statistiche s = new Statistiche();            // creo una classe statistiche che mi calcoli i valori da inserire nella classe CittaMediVar
 		this.citta = fil.getCitta();                  // associo l'attributo citta della classe con il risultato del filtro
-		
-		CittaMediaVar cit = new CittaMediaVar (citta.getNome(), s.mediaVento(citta, inizio, fine), s.varianzaVento(citta, inizio, fine),s.mediaVisibilita(citta, inizio, fine),s.varianzaVisibilita(citta, inizio, fine), s.mediaAngoloVento(citta, inizio, fine), s.varianzaAngoloVento(citta, inizio, fine));
-		citt = cit;                                   //dopo aver creato la classe cit già direttamente inizializzata mediante il suo costruttore la utilizzo per inizializzare la classe attributo citt di questa classe
+		if (this.citta != null) {
+		CittaMediaVar cit = new CittaMediaVar (citta.getNome(), s.mediaVento(citta, inizio, fine),
+												s.varianzaVento(citta, inizio, fine),
+												s.mediaVisibilita(citta, inizio, fine),
+												s.varianzaVisibilita(citta, inizio, fine), 
+												s.mediaAngoloVento(citta, inizio, fine), 
+												s.varianzaAngoloVento(citta, inizio, fine));
+			this.citt = cit;
+		}
+		else {
+			CittaMediaVar cit = new CittaMediaVar (null, 0, 0, 0, 0, 0, 0);
+			this.citt = cit;
+		}   								  //dopo aver creato la classe cit già direttamente inizializzata mediante il suo costruttore la utilizzo per inizializzare la classe attributo citt di questa classe
 	}
 	
 	/**
@@ -52,7 +62,8 @@ public class StatisticheASceltaPerCitta {
 	 * @return CittaMediaVar
 	 */
 	public CittaMediaVar getCittaMediaVar () {
-		return citt;
-	}
+		if (this.citt.getNome() == null) return null;
+		return this.citt;
+		}
 	}
 
