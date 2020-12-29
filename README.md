@@ -8,4 +8,16 @@ I risultati sarà possibile controllarli attraverso la chiamata di determinate A
 
 # Diagrammi UML
 
+Diagramma dei casi d'uso
+
 [![case-UMLEsame.png](https://i.postimg.cc/SN00HNJN/case-UMLEsame.png)](https://postimg.cc/nM1wDx46)
+
+Diagramma delle classi
+
+[![Citta.png](https://i.postimg.cc/3wknKmqM/Citta.png)](https://postimg.cc/xkSK5JYg)
+
+[![Filtri.png](https://i.postimg.cc/bNLTkmcc/Filtri.png)](https://postimg.cc/TpLgXq3C)
+
+[![Operazioni.png](https://i.postimg.cc/5ybBFCs2/Operazioni.png)](https://postimg.cc/cgkgprqp)
+
+[![Parser.png](https://i.postimg.cc/5tzL73Gt/Parser.png)](https://postimg.cc/NygKL1Qh)
