@@ -47,12 +47,12 @@ public class ControllerMeteo {
 	@GetMapping("/ListaCitta") 
 	public Vector<CittaMediaVar> exampleMethod(
 			@RequestParam(required = false, defaultValue = "1") String NomeCitta) throws FileNotFoundException, IOException, ParseException {
-		StatisticheAScelta p = new StatisticheAScelta(0, 85);
+		StatisticheSettimanali p = new StatisticheSettimanali(1);
 		if (NomeCitta.equals("1")) {
 			return p.getVettore();
 		}
 		else {
-			StatisticheASceltaPerCitta c = new StatisticheASceltaPerCitta(0, 85, NomeCitta);
+			StatisticheSettimanaliPerCitta c = new StatisticheSettimanaliPerCitta(NomeCitta, 1);
 			Vector<CittaMediaVar> CittaScelta = new Vector<CittaMediaVar> ();
 			CittaScelta.add(c.getCittaMediaVar());
 			return CittaScelta;
