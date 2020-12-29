@@ -31,4 +31,18 @@ Diagramma delle sequenze
 
 # Funzionamento codice
 
-Il programma permette di visualizzare le statistiche di alcune capitali europee
+Il programma permette di visualizzare le statistiche di alcune capitali europee; la ricerca è possibile effetuarla attraverso degli ID:
+
+-Londra = london,uk
+
+-Roma = rome
+
+-Amsterdam = amsterdam
+
+-Madrid = Madrid
+
+-Parigi = Paris
+
+I metodi possono essere richiamate attraverso postman insersendo le seguenti rotte:
+
+<pre><code> https://localhost:8080/ListaCitta</code></pre>
