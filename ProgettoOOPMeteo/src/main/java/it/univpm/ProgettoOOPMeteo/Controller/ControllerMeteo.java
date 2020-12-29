@@ -125,7 +125,7 @@ public class ControllerMeteo {
 		}
 		else {
 			if (Campionamento.equals("1")) {
-				if (inizio > fine) return null;
+				if (inizio > fine || inizio < 0 || inizio > 83 || fine < 0 || fine > 83) return null;
 				StatisticheASceltaPerCitta s = new StatisticheASceltaPerCitta(inizio,fine, nome);
 				Vector<CittaMediaVar> StatisticheASceltaPerCitta = new Vector<CittaMediaVar> ();
 				StatisticheASceltaPerCitta.add(s.getCittaMediaVar()); 
