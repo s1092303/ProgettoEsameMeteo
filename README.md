@@ -29,7 +29,17 @@ Diagramma delle sequenze
 
 [![diagramma-delle-sequenze.png](https://i.postimg.cc/65T7bc4N/diagramma-delle-sequenze.png)](https://postimg.cc/hfWPf90C)
 
-# Funzionamento codice
+# Rotte
+
+
+| Tipo | Rotta                         | Funzione                  |
+| :--: | :---------------------------: | :----------------------------------------------------------------------------------------------: |
+| get  | /ListaCitta                   | Stampa le statistiche delle città                                                                |
+| get  | /EstremiStatisticheVento      | Stampa le citta con media e varianza minima e massima rispetto alla ventosità                    |
+| get  | /EstremiStatisticheVisibilità | Stampa le citta con media e varianza minima e massima rispetto alla visibilità                   |
+| get  | /StatsAScelta                 | Stampa le statistiche delle città, potendo scegliere la singola città o un campionamento diverso |
+
+# Filtri
 
 Il programma permette di visualizzare le statistiche di alcune capitali europee; la ricerca è possibile effetuarla attraverso degli ID:
 
