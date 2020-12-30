@@ -11,7 +11,19 @@ I risultati sarà possibile controllarli attraverso la chiamata di determinate A
 
 # Come scaricarlo
 
-Da Eclipse 
+Da Eclipse bisogna scaricare i plugin di maven e SpringBoot.
+
+Successivamente bisogna importarlo tramite file e poi import come mostrato in figura.
+
+[![primo.png](https://i.postimg.cc/W4FL7jBr/primo.png)](https://postimg.cc/XZbzjM77)
+
+Dopodiché bisogna scaricare il plugin di Egit dal link in basso a destra ( m2e marketplace) 
+
+[![secondo.png](https://i.postimg.cc/ZnYwVxWg/secondo.png)](https://postimg.cc/HcK0L544)
+
+Infine basta far partire il programma dal main
+
+[![terzo.png](https://i.postimg.cc/YS187sgZ/terzo.png)](https://postimg.cc/qtv2XQ1x)
 
 # Diagrammi UML
 
