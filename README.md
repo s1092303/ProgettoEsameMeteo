@@ -94,17 +94,69 @@ Esempio:
 
 <pre><code> http://localhost:8080/StatsAScelta?nome=london,uk</code></pre>
 
-Il campionamento può essere specificato come "giornaliero" oppure si può evitare di specificarlo; in tal caso il programma prendere per default il campionamento ad intervalli di due ore. 
+Il campionamento può essere specificato come "Giornaliero" oppure si può evitare di specificarlo; in tal caso il programma prendere per default il campionamento ad intervalli di due ore. 
 
 Un esempio di utilizzo di questo parametro è il seguente:
 
-<pre><code> http://localhost:8080/StatsAScelta?Campionamento=giornaliero</code></pre>
+<pre><code> http://localhost:8080/StatsAScelta?Campionamento=Giornaliero</code></pre>
+
+Per esempio questa rotta da come risultato: 
+
+<pre><code>
+[
+    {
+        "nome": "london,uk",
+        "mediaVento": 7.209398,
+        "varianzaVento": 5.817421,
+        "mediaVisibilita": 9011.0,
+        "mediaAngoloVento": 131.16667,
+        "varianzaAngoloVento": 5556.806,
+        "varianzaVisibilita": 322468.66
+    },
+    {
+        "nome": "rome",
+        "mediaVento": 5.67364,
+        "varianzaVento": 10.545113,
+        "mediaVisibilita": 9101.583,
+        "mediaAngoloVento": 118.583336,
+        "varianzaAngoloVento": 5003.4097,
+        "varianzaVisibilita": 332218.75
+    },
+    {
+        "nome": "amsterdam",
+        "mediaVento": 5.518375,
+        "varianzaVento": 10.101326,
+        "mediaVisibilita": 8559.5,
+        "mediaAngoloVento": 122.583336,
+        "varianzaAngoloVento": 3632.91,
+        "varianzaVisibilita": 178126.08
+    },
+    {
+        "nome": "Madrid",
+        "mediaVento": 5.508675,
+        "varianzaVento": 8.701848,
+        "mediaVisibilita": 8946.583,
+        "mediaAngoloVento": 133.16667,
+        "varianzaAngoloVento": 5671.472,
+        "varianzaVisibilita": 343089.94
+    },
+    {
+        "nome": "Paris",
+        "mediaVento": 5.578587,
+        "varianzaVento": 4.830351,
+        "mediaVisibilita": 8888.667,
+        "mediaAngoloVento": 106.666664,
+        "varianzaAngoloVento": 9735.556,
+        "varianzaVisibilita": 180656.73
+    }
+]
+</code></pre>
 
 In questo modo il programma stamperà le statistiche giornaliere di tutte le città prendendo per default il primo giorno, nel caso che si voglia scegliere un giorno specifico si può utilizzare il terzo parametro "giorno", inserendo un numero da 1 a 7 ( se il numero non appartiene a questo intervallo il programma non ritorna niente).
 
 Per esempio la seguente rotta stampa le statistiche di Roma nel terzo giorno:
 
-<pre><code> http://localhost:8080/StatsAScelta?nome=rome&Campionamento=giornaliero&giorno=3 </code></pre>
+<pre><code> http://localhost:8080/StatsAScelta?nome=rome&Campionamento=Giornaliero&giorno=3 </code></pre>
 
 Non inserendo il tipo di campionamento il programma utilizzerà di default il campionamento per due ore. In questo caso è possibile usare i due parametri "inizio" e "fine".
 Il campionamento iniziale per prendere i dati è stato effettuato ad intervalli di due ore per una settimana, per cui il valori passati possono variare tra 0 e 83 (se il valore di inizio e maggiore di quello di fine il programma non ritornerà nulla).
