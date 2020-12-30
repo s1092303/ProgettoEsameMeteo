@@ -112,7 +112,23 @@ I valori di default di inizio e di fine sono rispettivamente 0 e 83.
 
 Per esempio, se voglio avere le statistiche di Parigi per il terzo e il quarto giorno dovrei scrivere: 
 
-<pre><code> http://localhost:8080/StatsAScelta?nome=Parigi&inizio=24&fine=47 </code></pre>
+<pre><code> http://localhost:8080/StatsAScelta?nome=Paris&inizio=24&fine=47 </code></pre>
+
+Questa rotta da come risultato:
+
+<pre><code> 
+[
+    {
+        "nome": "Paris",
+        "mediaVento": 5.8937874,
+        "varianzaVento": 8.832495,
+        "mediaVisibilita": 8923.625,
+        "mediaAngoloVento": 158.33333,
+        "varianzaAngoloVento": 3849.5554,
+        "varianzaVisibilita": 361899.97
+    }
+]
+</code></pre>
 
 # Autori
 
