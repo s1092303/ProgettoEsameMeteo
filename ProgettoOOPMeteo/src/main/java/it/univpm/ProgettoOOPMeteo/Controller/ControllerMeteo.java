@@ -34,6 +34,8 @@ import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 @RestController
 public class ControllerMeteo {
 
+	private int MaxCampionamento = ElaborazioneDatiDaFile.MaxCampionamento;
+	
 	/**
 	 * Questa prima rotta permette di scegliere cosa stampare in output (o la lista completa di tutte le città, in caso l'utente
 	 * non specifica niente, o una a scelta, inserendo il nome)
@@ -69,7 +71,7 @@ public class ControllerMeteo {
 	
 	@GetMapping("/EstremiStatisticheVento") 
 	public StatisticheVento method1() throws FileNotFoundException, IOException, ParseException {
-		StatisticheVento wind = new StatisticheVento(0, 83);
+		StatisticheVento wind = new StatisticheVento(0, MaxCampionamento);
 		return wind;		
 	}
 	
@@ -83,7 +85,7 @@ public class ControllerMeteo {
 
 	@GetMapping("/EstremiStatisticheVisibilita") 
 	public StatisticheVisibilita method2() throws FileNotFoundException, IOException, ParseException {
-		StatisticheVisibilita vis = new StatisticheVisibilita(0, 85);
+		StatisticheVisibilita vis = new StatisticheVisibilita(0, MaxCampionamento);
 		return vis;		
 	}
 	
@@ -125,7 +127,7 @@ public class ControllerMeteo {
 		}
 		else {
 			if (Campionamento.equals("1")) {
-				if (inizio > fine || inizio < 0 || inizio > 83 || fine < 0 || fine > 83) return null;
+				if (inizio > fine || inizio < 0 || inizio > MaxCampionamento || fine < 0 || fine > MaxCampionamento) return null;
 				StatisticheASceltaPerCitta s = new StatisticheASceltaPerCitta(inizio,fine, nome);
 				Vector<CittaMediaVar> StatisticheASceltaPerCitta = new Vector<CittaMediaVar> ();
 				StatisticheASceltaPerCitta.add(s.getCittaMediaVar()); 

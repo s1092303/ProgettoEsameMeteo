@@ -22,7 +22,8 @@ public class ElaborazioneDatiDaFile {
 
 	private Vector<String> ID = new Vector<String>(); // vettore di stringhe contenente i nomi delle varie citta
 	private Vector<Citta> city = new Vector<Citta> (); // vettore di un oggetto Citta che conterrà i dati presi in input
-
+    
+	public final static int  MaxCampionamento = 83;
 	/**
 	 * Costruttore della classe, serve per fare il parsing del file preso in input
 	 * @throws FileNotFoundException

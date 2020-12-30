@@ -23,6 +23,8 @@ public class StatisticheAScelta {
 	
 	protected int inizio = 0;
 	protected int fine = 0;
+	private int MaxCampionamento = ElaborazioneDatiDaFile.MaxCampionamento;
+	
 /**
  * Costruttore della classe si occupa mediante un ciclo di riempire il vettore  delle CittaMediaVar con tutte le caratteristiche 
  * delle citta nello storico
@@ -40,6 +42,7 @@ public class StatisticheAScelta {
 		
 		ElaborazioneDatiDaFile d = new ElaborazioneDatiDaFile();
 		Statistiche s = new Statistiche();
+		if ( (inizio >= 0)&&(inizio <= MaxCampionamento) && (fine >= 0) &&(fine<=MaxCampionamento) && (inizio <= fine)) {  // if per controllare che i parametri inizio e fine siano accettabili
 		for (int i = 0; i < d.getCity().size(); i++) {                                         //ciclo for per aggiungere al vettore ogni singola citta un ciclo alla volta
 			CittaMediaVar c = new CittaMediaVar();                                             //crea un nuova CittaMediaVar
 			c.setNome(d.getCity().get(i).getNome());                                           //Inserisce il suo nome
@@ -50,7 +53,7 @@ public class StatisticheAScelta {
 			c.setMediaAngoloVento(s.mediaAngoloVento(d.getCity().get(i), inizio, fine));       //calcola la media dell'angolo del vento e l'aggiunge alla classe
 			c.setVarianzaAngoloVento(s.varianzaAngoloVento(d.getCity().get(i), inizio, fine)); //calcola la varianza dell'angolo del vento e l'aggiunge alla classe
 			vettore.add(c);                                                                    //aggiunge la classe cittaMediaVar nel vettore 
-		}
+		}}
 	}
 
 	/**
@@ -59,7 +62,8 @@ public class StatisticheAScelta {
 	 */
 
 	public Vector<CittaMediaVar> getVettore() {
-		return vettore;
+		if(vettore.size() == 0) return null;
+		else return vettore;
 	}
  /**
   * sostituisce il vettore CittaMediaVar dentro la classe

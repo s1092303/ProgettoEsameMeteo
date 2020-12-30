@@ -7,6 +7,7 @@ import org.json.simple.parser.ParseException;
 
 import citta.Citta;
 import citta.CittaMediaVar;
+import it.univpm.ProgettoOOPMeteo.Operazioni.ElaborazioneDatiDaFile;
 import it.univpm.ProgettoOOPMeteo.Operazioni.Statistiche;
 /**
  * Questa classe permette di inizializzare una classe CittaMediaVar passandogli il nome della citta della quale vogliamo conoscere le statistiche 
@@ -23,6 +24,7 @@ public class StatisticheASceltaPerCitta {
 	protected int inizio = 0;
 	protected int fine = 0;
 	protected String nome;
+	private int MaxCampionamento = ElaborazioneDatiDaFile.MaxCampionamento;
 /**
  * costruttore che si occupa di inizializzare la classe CittaMediaVar passandogli il nome della citta che vogliamo analizzare come stringa
  * e i valori di inizo e di fine dell'intervallo da analizzare 
@@ -42,7 +44,8 @@ public class StatisticheASceltaPerCitta {
 		FiltroPerNome fil = new FiltroPerNome (nome); //creo una classe filtro per nome per determinare quale citta dallo storico prendere
 		Statistiche s = new Statistiche();            // creo una classe statistiche che mi calcoli i valori da inserire nella classe CittaMediVar
 		this.citta = fil.getCitta();                  // associo l'attributo citta della classe con il risultato del filtro
-		if (this.citta != null) {
+		
+		if (this.citta != null && (inizio >= 0)&&(inizio <= MaxCampionamento) && (fine >= 0) &&(fine<=MaxCampionamento) && (inizio <= fine)) {      //if per controllare che inizo e fine siano valori accettabili
 		CittaMediaVar cit = new CittaMediaVar (citta.getNome(), s.mediaVento(citta, inizio, fine),
 												s.varianzaVento(citta, inizio, fine),
 												s.mediaVisibilita(citta, inizio, fine),
