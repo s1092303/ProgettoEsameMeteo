@@ -113,3 +113,9 @@ I valori di default di inizio e di fine sono rispettivamente 0 e 83.
 Per esempio, se voglio avere le statistiche di Parigi per il terzo e il quarto giorno dovrei scrivere: 
 
 <pre><code> http://localhost:8080/StatsAScelta?nome=Parigi&inizio=24&fine=47 </code></pre>
+
+# Autori
+
+**Nicola Ronchini**   : https://github.com/s1092303
+
+**Tommaso Omiccioli** : https://github.com/s1093667
