@@ -9,6 +9,10 @@ Le lista delle città è composta da 5 capitali di diversi stati dell'Europa qua
 
 I risultati sarà possibile controllarli attraverso la chiamata di determinate API, su Postman o all'interno di un motore di ricerca, alle quali verranno passate valori riguardanti alle basi su cui fare le statistiche oppure scegliendo una determinata città.
 
+# Come scaricarlo
+
+Da Eclipse 
+
 # Diagrammi UML
 
 Diagramma dei casi d'uso
