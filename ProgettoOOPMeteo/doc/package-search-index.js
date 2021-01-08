@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"citta"},{"l":"Filtri"},{"l":"it.univpm.ProgettoOOPMeteo"},{"l":"it.univpm.ProgettoOOPMeteo.Controller"},{"l":"it.univpm.ProgettoOOPMeteo.Operazioni"},{"l":"parser"},{"l":"test"}];updateSearchResults();
