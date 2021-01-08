@@ -21,6 +21,18 @@ Dopodiché bisogna scaricare il plugin di Egit dal link in basso a destra ( m2e 
 
 [![secondo.png](https://i.postimg.cc/ZnYwVxWg/secondo.png)](https://postimg.cc/HcK0L544)
 
+Prima di poter eseguire il codice bisogna prima includere alcune librerie, nello specifico JSONsimple e JUnit5.
+
+Per la prima bisogna fare tasto destro sul progetto e andare su "build path" e cliccare "add external archives" come mostrato nella seguente immagine
+
+[![1.png](https://i.postimg.cc/mrNLyyT1/1.png)](https://postimg.cc/xk8V0HJ9)
+
+Invece per aggiungere JUnit5 bisgona andare nella classe dei test e fare clic destro negli errori nella barra a sinistra (ne basta uno) e cliccare su "Add JUnit5".
+
+[![2.png](https://i.postimg.cc/gJ2Wq9M1/2.png)](https://postimg.cc/67ggtPxh)
+
+[![3.png](https://i.postimg.cc/MHhJSnW8/3.png)](https://postimg.cc/YLfsNqGX)
+
 Infine basta far partire il programma dal main
 
 [![terzo.png](https://i.postimg.cc/YS187sgZ/terzo.png)](https://postimg.cc/qtv2XQ1x)
@@ -55,7 +67,7 @@ Diagramma delle sequenze
 | get  | /EstremiStatisticheVisibilità | Stampa le citta con media e varianza minima e massima rispetto alla visibilità                   |
 | get  | /StatsAScelta                 | Stampa le statistiche delle città, potendo scegliere la singola città o un campionamento diverso |
 
-# Filtri
+# Filtri ed alcuni esempi
 
 Il programma permette di visualizzare le statistiche di alcune capitali europee; la ricerca è possibile effetuarla attraverso degli ID:
 
